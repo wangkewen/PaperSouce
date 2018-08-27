@@ -1,0 +1,189 @@
+\section{Appendix}
+\label{appendix}
+
+\begin{algorithm}[h]
+\SetKwProg{Fn}{Function}{}{end}
+\SetKwInput{KwIn}{Input}
+\SetKwInput{KwOut}{Output}
+\SetAlgoLined
+\KwIn{List $JobProfiles$ listing Execution Information without Interference}
+\KwOut{List $JobTime$ listing Execution Time with Interference}
+\Fn {PredictJobExecution}{
+Initialize List $Phases$, List $JobTime$\;
+\For {all $job$ $\in$ $JobProfiles$ }{
+$Phases$.add($job$.getStage(0)); //first stage\
+}
+\While{$Phases$.size $>$ 0}{ 
+Initialize MinTime $\leftarrow$ MaxValue\;
+\For {all $phase$ $\in$ $Phases$}{
+r $\leftarrow$ $phase$.calculateSlowdownRatio($Phases$)\;
+phaseTime $\leftarrow$ $phase$.getStageTime() $\times$ r\;
+$phase$.setPhaseTime(phaseTime)\;
+$phase$.setSlowdownRatio(r)\;
+\If{phaseTime $<$ MinTime}{
+MinTime $\leftarrow$ phaseTime\;
+}
+} 
+\For {all $phase$ $\in$ $Phases$}{
+\eIf{phase.getPhaseTime $=$ MinTime}{
+StageTimeInterfere $\leftarrow$ MinTime $+$ $phase$.getPartialTime()\;
+$JobTimes$.add($phase$ ,StageTimeInterfere)\;
+$Phases$.remove($phase$)\;
+\If{$JobProfiles$.hasNextStage($phase$)}{
+nextStage $\leftarrow$ $JobProfiles$.nextStage($phase$)\;
+$Phases$.add(nextStage)\; 
+} 
+}
+{$phase$.setStageTime($phase$.getStageTime() $-$ $\frac{MinTime}{phase.getSlowdownRatio()}$)\;
+$phase$.setPartialTime($phase$.getPartialTime $+$ MinTime)\;
+}
+}
+}
+}
+\caption{Interference Estimation Algorithm}
+\label{algo}
+\end{algorithm}
+
+
+
+
+
+
+
+\begin{algorithm}[h]
+\SetKwProg{Fn}{Function}{}{end}
+\SetKwInput{KwIn}{Input}
+\SetKwInput{KwOut}{Output}
+\SetAlgoLined{}
+\KwIn{List $JobProfiles$ listing Execution Information without Interference}
+\KwOut{List $JobsWaitingTime$ listing Job Waiting Time before scheduling}
+\Fn {Scheduling}{
+$JobProfiles \leftarrow $ CalculateExecutedTime($JobProfiles$) \;
+$JobsWaitingTime \leftarrow$ FindWaitingTime($JobProfiles$) \;
+}
+\caption{Job Scheduling Algorithm}
+\label{algoschedule}
+\end{algorithm}
+
+
+\begin{algorithm}[h]
+\SetKwProg{Fn}{Function}{}{end}
+\SetKwInput{KwIn}{Input}
+\SetKwInput{KwOut}{Output}
+\SetAlgoLined{}
+\KwIn{List $JobProfiles$ listing Execution Information without Interference}
+\KwOut{Remaining $JobProfiles$ after previous scheduling}
+\Fn {CalculateExecutedTime}{
+Initialize $SchInfo$, List $JobTimeLine$, Map $SlowdownRatios$, $ExeTime$\;
+$SchInfo \leftarrow$ read($ScheduleFile$)\;
+$LastExe \leftarrow SchInfo$.ExeTime()\;
+$LastWait \leftarrow SchInfo$.WaitTime()\;
+JobsUpdate($JobProfiles$,$LastExe$,$LastWait$)\;
+$interval \leftarrow$ CurrentTime $- SchInfo$.SubTime()\;
+\For {all $job \in JobProfiles$}{
+$JobTimeLine$.add($job$.getStage(0).getBegin())\;
+$JobTimeLine$.add($job$.getStage(0).getEnd())\;
+$R \leftarrow job$.getStage(0).calculateSlowdownRatios()\;
+$SlowdownRatios$.put($job$,$R$)\;
+}
+Initialize List $ParallelJobs$\;
+\For {all $Timepoint \in JobTimeLine$}{
+\If{ $Timepoint > interval$}{
+%$isFinish \leftarrow$ True\;
+$Timepoint$.setValue($interval$)\;
+}
+$gap \leftarrow Timepoint- LastTimepoint$\;
+$job \leftarrow Timepoint$.getJob()\;
+\For{all $job \in ParallelJobs$}{
+$p \leftarrow ParallelJobs$.size() $-$ 1\;
+$ExeTime$.put($job$,$ExeTime$.get($job$) $+ gap \times SlowdownRatios$.get($job$).get($p$))\;
+}
+\eIf{$Timepoint$.isBegin()}{
+$ParallelJobs$.add($job$)\;
+}{
+$lefttime \leftarrow job$.getDuration() $- job$.getStage(0).getDuration()\;
+\eIf{$lefttime > interval - Timepoint$}{
+$ExeTime$.put($job$,$ExeTime$.get($job$) $+ interval - Timepoint$.)\;
+}{
+$ExeTime$.put($job$,$ExeTime$.get($job$) $+ lefttime$)\;
+}
+$ParallelJobs$.remove($job$)\;
+}
+$LastTimepoint \leftarrow Timepoint$\; 
+%\If{$isFinish$}{
+%break\;}
+}
+JobsUpdate($JobProfiles$,$LastWait$,0)\;
+JobsUpdate($JobProfiles$,$ExeTime$,0)\;
+}
+\caption{Calculate Executed Time}
+\label{algoexe}
+\end{algorithm}
+
+
+
+
+
+
+
+
+
+\begin{algorithm}[h]
+\SetKwProg{Fn}{Function}{}{end}
+\SetKwInput{KwIn}{Input}
+\SetKwInput{KwOut}{Output}
+\SetAlgoLined{}
+\KwIn{List $JobProfiles, ExeTime, WaitTime$}
+\KwOut{Updated List $JobProfiles$}
+\Fn {JobsUpdate}{
+\For {all $job \in JobProfiles$ }{
+\If{$ExeTime$.get($job$) $>$ 0}{
+$job$.minus($ExeTime$.get($job$))\;
+}
+\If{$WaitTime$.get($job$) $>$ 0}{
+$job$.addStart($WaitTime$.get($job$))\;
+}
+}
+}
+\caption{JobProfile Update}
+\label{algoupdate}
+\end{algorithm}
+
+
+\begin{algorithm}[h]
+\SetKwProg{Fn}{Function}{}{end}
+\SetKwInput{KwIn}{Input}
+\SetKwInput{KwOut}{Output}
+\SetAlgoLined{}
+\KwIn{List $JobProfiles$ listing Execution Information without Interference}
+\KwOut{List $JobsWaitingTime$ listing Job Waiting Time before scheduling}
+\Fn {FindWaitingTime}{
+Initialize $WaitN$, $minTime$, Map $JobsWait$, List $JobsWaitingTime$\;
+$JobTime$ $\leftarrow$ $PredictJobExecution$($JobProfiles$)\;
+\For {all $job \in JobProfiles$ }{
+$waitTimeMax \leftarrow JobTime$.getMax() $- job$.getDuration()\;
+\For{$i \gets 0$ to $WaitN$}{
+$Jobwait$.add($\frac{i}{WaitN}\times waitTimeMax$) \;
+}
+$JobsWait$.put($job$,$Jobwait$)\;
+}
+\For{ $Jobswait \in \prod_{i=1}^{N} JobsWait.get(i) $}{
+JobsUpdate($JobProfiles$,0,$Jobswait$)\;
+$JobTime$ $\leftarrow$ $PredictJobExecution$($JobProfiles$)\;
+\If{$JobTime$.getMax() $< minTime$}{
+$minTime \leftarrow JobTime$.getMax() \;
+$JobsWaitingTime \leftarrow Jobswait$\;
+}
+
+}
+}
+\caption{Find Waiting Time}
+\label{algofind}
+\end{algorithm}
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+
+
+
+\newcommand{\nop}[1]{}
+\documentclass[conference]{IEEEtran}
+
+\usepackage{amsmath}
+\usepackage[belowskip=-6pt,aboveskip=0pt]{caption}
+\usepackage[lined,linesnumbered,noresetcount]{algorithm2e}
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{tablefootnote}
+\usepackage{url}
+  
+\usepackage{caption}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+
+
+
+
+
+
+
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+
+\title{Modeling Interference for Apache Spark Jobs}
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\IEEEauthorblockN{Nhan Nguyen}
+%\IEEEauthorblockA{Computer SceEngineering\\
+%Georgia Institute of Technology\\
+%Atlanta, Georgia 30332--0250\\
+%Email: http://www.michaelshell.org/contact.html}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678--2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+
+
+\author{\IEEEauthorblockN{Kewen Wang, Mohammad Maifi Hasan Khan, Nhan Nguyen and Swapna Gokhale}
+\IEEEauthorblockA{Department of Computer Science and Engineering\\
+University of Connecticut\\ Email: kewen.wang@uconn.edu, maifi.khan@engr.uconn.edu,nhan.q.nguyen@uconn.edu,ssg@engr.uconn.edu}}
+
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+
+To maximize resource utilization and system throughput, hardware resources are often shared across multiple Apache Spark jobs through virtualization techniques in cloud platforms. However, while the performance of these jobs running in virtualized environment can be negatively affected due to interference caused by resource contention, it is nontrivial to predict the effect of interference on job performance in such settings, which is critical for efficient scheduling of such jobs and performance troubleshooting. To address this challenge, in this paper, we develop analytical models to estimate the effect of interference among multiple Apache Spark jobs running concurrently on job execution time in virtualized cloud environment. We evaluated the accuracy of our models using four real-life applications (e.g., Page rank, K-means, Logistic regression, and Word count) on a 6 node cluster while running up to four jobs concurrently. Our experimental results show that the model can achieve high prediction accuracy, and ranges between 86\% to 99\% when the number of concurrent jobs are four and all start simultaneously, and ranges between 71\% to 99\% when the number of concurrent jobs are four and start at different times.
+
+
+ 
+
+
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+
+Apache Spark; Modeling Performance Interference; Execution Time Prediction
+
+\end{IEEEkeywords}
+
+
+\IEEEpeerreviewmaketitle
+
+\input{introduction}
+\input{related}
+\input{overview}
+\input{evaluation}
+\input{newsection}
+\input{limitations}
+\input{conclusion}
+
+
+\section{Acknowledgement} 
+This work is supported by the AFOSR under Grant No.
+\linebreak FA 9550-15-1-0184. Any opinions, findings, and conclusions
+or recommendations expressed in this material are those of
+the authors and do not necessarily reflect the views of the
+funding agency.
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{paper}
+
+
+\end{document}
+
+

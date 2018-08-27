@@ -1,0 +1,132 @@
+
+
+
+\newcommand{\nop}[1]{}
+\documentclass[twocolumn]{svjour3}
+
+\usepackage{amsmath}
+%\usepackage[belowskip=-6pt,aboveskip=0pt]{caption}
+\usepackage[lined,linesnumbered,resetcount]{algorithm2e}
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{tablefootnote}
+\usepackage{url}
+  
+\usepackage{caption}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{IEEEtrantools}
+
+
+
+
+
+
+
+
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+
+
+\title{Design and Implementation of an Analytical Framework for Interference Aware Job Scheduling on Apache Spark Platform}
+
+
+
+
+\author{Kewen Wang \\
+Mohammad Maifi Hasan Khan \\ Nhan Nguyen \\ Swapna Gokhale}
+
+
+\institute{ \at
+Department of Computer Science and Engineering\\University of Connecticut \\
+%              Tel.: +123-45-678910\\
+  %            Fax: +123-45-678910\\
+              \email{kewen.wang@uconn.edu, maifi.khan@uconn.edu,nhan.q.nguyen@uconn.edu,\\ssg@uconn.edu}           %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+%           \and
+   %        S. Author \at
+      %        second address
+}
+
+
+
+
+
+
+%\date{Received: date / Accepted: date}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+
+Apache Spark is one of the recently popularized open-source platforms that is increasingly being used for large-scale data analytic applications. However, while performance prediction in such systems is important for efficient job scheduling and optimizing resource allocation, interference among multiple Apache Spark jobs running concurrently in a virtualized environment makes it extremely difficult, which is addressed in this paper. Towards that, first, we develop data-driven analytical models to estimate the effect of interference among multiple Apache Spark jobs on job execution time in virtualized cloud environments. Next, we present the design of an interference aware job scheduling algorithm leveraging the developed analytical framework. We evaluated the accuracy of our models using four real-life applications (e.g., Page rank, K-means, Logistic regression, and Word count) on a 6 node cluster while running up to four jobs concurrently. Our experimental results show that the scheduling algorithm reduces the average execution time of individual jobs and the total execution time significantly, and ranges between 47\% to 26\% for individual jobs and 2\% to 13\% for total execution time respectively.\footnote{This paper is a significantly extended version of the authors' prior work~\cite{wangperformance,kewencloud} and includes the design and evaluation of interference aware job scheduling algorithms, which is not presented in prior efforts.}
+
+
+
+
+\nop{
+To maximize resource utilization and system throughput, hardware resources are often shared across multiple Apache Spark jobs through virtualization techniques in cloud platforms. However, while the performance of these jobs running in virtualized environment can be negatively affected due to interference caused by resource contention, it is nontrivial to predict the effect of interference on job performance in such settings, which is critical for efficient scheduling of such jobs and performance troubleshooting. To address this challenge, in this paper, first, we develop analytical models to estimate the effect of interference among multiple Apache Spark jobs running concurrently on job execution time in virtualized cloud environment. Second and finally, we present the design of an interference aware job scheduling algorithm leveraging the analytical framework for Apache Spark platform. We evaluated the accuracy of our models using four real-life applications (e.g., Page rank, K-means, Logistic regression, and Word count) on a 6 node cluster while running up to four jobs concurrently. Our experimental results show that the model can achieve high prediction accuracy, and ranges between 86\% to 99\% when the number of concurrent jobs are four and all start simultaneously, and ranges between 71\% to 99\% when the number of concurrent jobs are four and start at different times. Furthermore, the scheduling algorithm reduces the average execution time of individual jobs and the total execution time (i.e., completion time of the last job minus the start time of the first job) significantly, and ranges between 47\% to 26\% for individual jobs and 2\% to 13\% for total execution time respectively.\footnote{This paper is a significantly extended version of the authors' prior work~\cite{wangperformance,kewencloud} and includes the design and evaluation of interference aware job scheduling algorithms, which is not presented in prior efforts.} 
+}
+
+
+ 
+
+
+
+\end{abstract}
+
+\keywords{Apache Spark \and Job Scheduling \and Performance Interference Modeling \and Execution Time Prediction}
+
+
+
+
+
+\input{introduction}
+\input{related}
+\input{overview}
+\input{evaluation}
+\input{newsection}
+\input{schedulingevaluation}
+\input{limitations}
+\input{conclusion}
+
+
+\section{Acknowledgment} 
+\noindent
+This material is based upon work supported by the Air Force Office of Scientific Research award number FA9550-15-1-0184 under the DDDAS program. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the funding agency.
+
+
+
+%\bibliographystyle{IEEEtran}
+
+% BibTeX users please use one of
+
+%\bibliographystyle{spbasic}      % basic style, author-year citations
+
+\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spphys}       % APS-like style for physics
+
+\bibliography{paper}
+
+
+
+\newpage
+\newpage
+
+\input{appendix}
+
+\end{document}
+
+

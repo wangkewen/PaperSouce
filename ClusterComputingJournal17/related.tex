@@ -1,0 +1,15 @@
+\section{Related Work}
+\label{related}
+\noindent
+With the proliferation of cloud computing platforms, significant volume of prior work looked into the problem of performance modeling in cloud settings and distributed systems in general~\cite{predict,nosqlmodel,pmodel,starfish,oltp,prepare,cloudopt,cloudscale,dbseer,amml}. 
+Among these, PREDIcT~\cite{predict} looks into the problem of predicting runtime for network intensive iterative algorithms and focuses on Hadoop MapReduce platform. Starfish~\cite{starfish} leverages analytical approaches to predict job performance based on job simulation data. CloudScope \cite{chen2015cloudscope} is one of the more recent efforts that employs a discrete-time Markov Chain model to predict the performance interference of co-resident applications by modeling an application as a sequence of job slices and estimating the probability of a job moving from one state to another considering different factors such as current workloads and slowdown. Matrix~\cite{chiang2014matrix} utilizes machine learning methods to predict application performance on virtual machines by applying clustering methods to classify applications and predicts the performance of new applications by comparing against the previously trained models. 
+
+
+\noindent
+Interference modeling among multiple applications running on MapReduce framework is tried before as well for the purpose of efficient job scheduling~\cite{bu2013interference} that requires training using different combinations of applications, which can quickly become prohibitive. MIMP~\cite{zhangmimp} presents a progress aware scheduler for Hadoop framework that applies regression model to train and predict task completion time based on past execution. HybridMR \cite{sharma2013hybridmr} presents another MapReduce scheduler for hybrid data center consisting of physical and virtual machines. This scheduler uses performance interference models to guide resource allocation, and applies linear and non-linear exponential regression model to capture CPU, I/O, and memory interference. 
+
+
+\noindent
+While these prior efforts provide invaluable insight to the problem of performance modeling, however, most of them use black-box approaches and can not be extended easily without retraining. Moreover, due to the multi-stage execution model and in-memory computation feature of Apache Spark platform, it is non-trivial to apply these approaches without further modifications for predicting the effect of interference on job execution time. As such, we focus on developing data-driven analytical models for modeling interference among multiple Apache Spark jobs which is complementary to prior efforts. 
+
+

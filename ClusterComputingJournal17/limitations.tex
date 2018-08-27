@@ -1,0 +1,26 @@
+
+\section{Discussion}
+\label{discussion}
+While our framework can predict performance degradation due to interference among multiple Apache Spark jobs with high accuracy and reduces the average execution time for individual jobs significantly, we do acknowledge several limitations of our current work as follows. 
+
+\noindent
+%First, our model assumes that the stages within a job are executed sequentially and does not consider the possibility of parallel execution, which will require extending our models. 
+
+\noindent
+First, our current work models the interference for the first stage only. However, as the presented framework predicts performance for each individual stage, the model can be easily extended for cases where the interference happens in later stages.
+
+\noindent
+Second, as this work focuses on modeling interference among multiple Apache Spark jobs, we assume that all the VMs running on the same machine are running Apache Spark jobs. As such, if multiple VMs consolidated on the same physical machine are running different kinds of jobs, our model may not work as the model of interference will be different. While we can extend our approach for such scenarios, it will require adaptation of model parameters. 
+
+\noindent
+Finally, the model was evaluated on a 6 node cluster with 4 concurrent jobs, which is smaller compared to the size of real-life clusters. None the less, our modeling framework demonstrates the feasibility of modeling interference for Apache Spark platform on a virtualized cluster and should work well once the parameters are estimated for different cluster size and number of concurrent jobs in a system.
+
+
+
+
+
+
+
+
+
+

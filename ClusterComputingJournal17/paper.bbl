@@ -1,0 +1,221 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{dstat}
+Dstat: Versatile resource statistics tool.
+\newblock \urlprefix\url{http://dag.wiee.rs/home-made/dstat/}
+
+\bibitem{hadoop}
+https://hadoop.apache.org/
+
+\bibitem{sdss}
+{Sloan Digital Sky Survey}.
+\newblock \urlprefix\url{http://www.sdss.org/}
+
+\bibitem{snap}
+{Stanford SNAP}.
+\newblock \urlprefix\url{http://snap.stanford.edu/}
+
+\bibitem{xen}
+{Xen Project}.
+\newblock \urlprefix\url{http://www.xenproject.org/}
+
+\bibitem{nosqlmodel}
+Barbierato, E., Gribaudo, M., Iacono, M.: {Performance evaluation of NoSQL
+  big-data applications using multi-formalism models}.
+\newblock Future Generation Computer Systems \textbf{37}, 345--353 (2014)
+
+\bibitem{m3}
+Brun, C., Art{\'e}es, T., Margalef, T., Cort{\'e}es, A.: {Coupling Wind
+  Dynamics into a DDDAS Forest Fire Propagation Prediction System}.
+\newblock Procedia Computer Science \textbf{9}, 1110--1118 (2012)
+
+\bibitem{bu2013interference}
+Bu, X., Rao, J., Xu, C.z.: {Interference and Locality-Aware Task Scheduling for
+  MapReduce Applications in Virtual Clusters}.
+\newblock In: Proceedings of the 22nd international symposium on
+  High-performance parallel and distributed computing, pp. 227--238. ACM (2013)
+
+\bibitem{cloudopt}
+Chaisiri, S., Lee, B.S., Niyato, D.: {Optimization of Resource Provisioning
+  Cost in Cloud Computing}.
+\newblock Services Computing, IEEE Transactions on \textbf{5}(2), 164--177
+  (2012)
+
+\bibitem{chen2015cloudscope}
+Chen, X., Rupprecht, L., Osman, R., Pietzuch, P., Franciosi, F., Knottenbelt,
+  W.: {CloudScope: Diagnosing and Managing Performance Interference in
+  Multi-Tenant Clouds}.
+\newblock In: Modeling, Analysis and Simulation of Computer and
+  Telecommunication Systems (MASCOTS), 2015 IEEE 23rd International Symposium
+  on, pp. 164--173. IEEE (2015)
+
+\bibitem{cheng2015resource}
+Cheng, D., Rao, J., Jiang, C., Zhou, X.: {Resource and Deadline-Aware Job
+  Scheduling in Dynamic Hadoop Clusters}.
+\newblock In: Parallel and Distributed Processing Symposium (IPDPS), 2015 IEEE
+  International, pp. 956--965. IEEE (2015)
+
+\bibitem{chiang2014matrix}
+Chiang, R.C., Hwang, J., Huang, H.H., Wood, T.: {Matrix: Achieving Predictable
+  Virtual Machine Performance in the Clouds}.
+\newblock In: 11th International Conference on Autonomic Computing (ICAC 14)
+  (2014)
+
+\bibitem{delimitrou2014quasar}
+Delimitrou, C., Kozyrakis, C.: {Quasar: Resource-Efficient and QoS-Aware
+  Cluster Management}.
+\newblock ACM SIGPLAN Notices \textbf{49}(4), 127--144 (2014)
+
+\bibitem{amml}
+Didona, D., Quaglia, F., Romano, P., Torre, E.: {Enhancing Performance
+  Prediction Robustness by Combining Analytical Modeling and Machine Learning}.
+\newblock In: Proceedings of the International Conference on Performance
+  Engineering (ICPE). ACM (2015)
+
+\bibitem{m6}
+Fujimoto, R., Guin, A., Hunter, M., Park, H., Kanitkar, G., Kannan, R.,
+  Milholen, M., Neal, S., Pecher, P.: {A Dynamic Data Driven Application System
+  for Vehicle Tracking}.
+\newblock Procedia Computer Science \textbf{29}, 1203--1215 (2014)
+
+\bibitem{starfish}
+Herodotou, H., Lim, H., Luo, G., Borisov, N., Dong, L., Cetin, F.B., Babu, S.:
+  {Starfish: A Self-tuning System for Big Data Analytics.}
+\newblock In: CIDR, vol.~11, pp. 261--272 (2011)
+
+\bibitem{khan2015hadoop}
+Khan, M., Jin, Y., Li, M., Xiang, Y., Jiang, C.: {Hadoop Performance Modeling
+  for Job Estimation and Resource Provisioning}.
+\newblock IEEE Transactions on Parallel and Distributed Systems \textbf{27}(2),
+  441--454 (2016)
+
+\bibitem{lai2014io}
+Lai, C.A., Wang, Q., Kimball, J., Li, J., Park, J., Pu, C.: {IO Performance
+  Interference among Consolidated n-Tier Applications: Sharing Is Better Than
+  Isolation for Disks}.
+\newblock In: Cloud Computing (CLOUD), 2014 IEEE 7th International Conference
+  on, pp. 24--31. IEEE (2014)
+
+\bibitem{iot}
+Li, S., Da~Xu, L., Zhao, S.: {The internet of things: a survey}.
+\newblock Information Systems Frontiers \textbf{17}(2), 243--259 (2015)
+
+\bibitem{oltp}
+Mozafari, B., Curino, C., Jindal, A., Madden, S.: {Performance and Resource
+  Modeling in Highly-Concurrent OLTP Workloads}.
+\newblock In: Proceedings of the 2013 acm sigmod international conference on
+  management of data, pp. 301--312. ACM (2013)
+
+\bibitem{dbseer}
+Mozafari, B., Curino, C., Madden, S.: {DBSeer: Resource and Performance
+  Prediction for Building a Next Generation Database Cloud.}
+\newblock In: CIDR (2013)
+
+\bibitem{noorshams2014automated}
+Noorshams, Q., Busch, A., Rentschler, A., Bruhn, D., Kounev, S., Tuma, P.,
+  Reussner, R.: {Automated Modeling of I/O Performance and Interference Effects
+  in Virtualized Storage Systems}.
+\newblock In: Distributed Computing Systems Workshops (ICDCSW), 2014 IEEE 34th
+  International Conference on, pp. 88--93. IEEE (2014)
+
+\bibitem{ousterhout2015making}
+Ousterhout, K., Rasti, R., Ratnasamy, S., Shenker, S., Chun, B.G., ICSI, V.:
+  {Making Sense of Performance in Data Analytics Frameworks.}
+\newblock In: NSDI, vol.~15, pp. 293--307 (2015)
+
+\bibitem{cloudscale}
+Patel, P., Bansal, D., Yuan, L., Murthy, A., Greenberg, A., Maltz, D.A., Kern,
+  R., Kumar, H., Zikos, M., Wu, H., et~al.: {Ananta: Cloud Scale Load
+  Balancing}.
+\newblock In: ACM SIGCOMM Computer Communication Review, vol.~43, pp. 207--218.
+  ACM (2013)
+
+\bibitem{m2}
+Patra, A., Bursik, M., Dehn, J., Jones, M., Pavolonis, M., Pitman, E.B., Singh,
+  T., Singla, P., Webley, P.: {A DDDAS Framework for Volcanic Ash Propagation
+  and Hazard Analysis}.
+\newblock Procedia Computer Science \textbf{9}, 1090--1099 (2012)
+
+\bibitem{predict}
+Popescu, A.D., Balmin, A., Ercegovac, V., Ailamaki, A.: {PREDIcT: Towards
+  Predicting the Runtime of Large Scale Iterative Analytics}.
+\newblock Proceedings of the VLDB Endowment \textbf{6}(14), 1678--1689 (2013)
+
+\bibitem{m5}
+Prudencio, E.E., Bauman, P.T., Williams, S., Faghihi, D., Ravi-Chandar, K.,
+  Oden, J.T.: {A Dynamic Data Driven Application System for Real-time
+  Monitoring of Stochastic Damage}.
+\newblock Procedia Computer Science \textbf{18}, 2056--2065 (2013)
+
+\bibitem{hybridmr}
+Sharma, B.P., Wood, T., Das, C.R.: {HybridMR: A Hierarchical MapReduce
+  Scheduler for Hybrid Data Centers}.
+\newblock In: Distributed Computing Systems (ICDCS), 2013 IEEE 33rd
+  International Conference on, pp. 102--111. IEEE (2013)
+
+\bibitem{sharma2013hybridmr}
+Sharma, B.P., Wood, T., Das, C.R.: {HybridMR: A Hierarchical MapReduce
+  Scheduler for Hybrid Data Centers}.
+\newblock In: Distributed Computing Systems (ICDCS), 2013 IEEE 33rd
+  International Conference on, pp. 102--111. IEEE (2013)
+
+\bibitem{prepare}
+Tan, Y., Nguyen, H., Shen, Z., Gu, X., Venkatramani, C., Rajan, D.: {Prepare:
+  Predictive Performance Anomaly Prevention for Virtualized Cloud Systems}.
+\newblock In: Distributed Computing Systems (ICDCS), 2012 IEEE 32nd
+  International Conference on, pp. 285--294. IEEE (2012)
+
+\bibitem{m4}
+Vodacek, A., Kerekes, J.P., Hoffman, M.J.: {Adaptive Optical Sensing in an
+  Object Tracking DDDAS}.
+\newblock Procedia Computer Science \textbf{9}, 1159--1166 (2012)
+
+\bibitem{wangperformance}
+Wang, K., Khan, M.M.H.: {Performance Prediction for Apache Spark Platform}.
+\newblock In: High Performance Computing and Communications (HPCC), 2015 IEEE
+  17th International Conference on, pp. 166--173. IEEE (2015)
+
+\bibitem{kewencloud}
+Wang, K., Khan, M.M.H., Gokhale, S.: {Modeling Interference for Apache Spark
+  Jobs}.
+\newblock In: Proceedings of IEEE International Conference on Cloud Computing
+  (CLOUD). San Francisco, USA (2016)
+
+\bibitem{rdd}
+Zaharia, M., Chowdhury, M., Das, T., Dave, A., Ma, J., McCauley, M., Franklin,
+  M.J., Shenker, S., Stoica, I.: {Resilient Distributed Datasets: A
+  Fault-Tolerant Abstraction for In-Memory Cluster Computing}.
+\newblock In: Proceedings of the 9th USENIX conference on Networked Systems
+  Design and Implementation, pp. 2--2. USENIX Association (2012)
+
+\bibitem{spark}
+Zaharia, M., Chowdhury, M., Franklin, M.J., Shenker, S., Stoica, I.: {Spark:
+  Cluster Computing with Working Sets}.
+\newblock In: Proceedings of the 2nd USENIX conference on Hot topics in cloud
+  computing (2010)
+
+\bibitem{zhangmimp}
+Zhang, W., Rajasekaran, S., Wood, T., Zhu, M.: {MIMP: Deadline and Interference
+  Aware Scheduling of Hadoop Virtual Machines}.
+\newblock In: Cluster, Cloud and Grid Computing (CCGrid), 2014 14th IEEE/ACM
+  International Symposium on, pp. 394--403. IEEE (2014)
+
+\bibitem{pmodel}
+Zhang, Z., Cherkasova, L., Loo, B.T.: {Performance Modeling of MapReduce Jobs
+  in Heterogeneous Cloud Environments}.
+\newblock In: Proceedings of the 2013 IEEE Sixth International Conference on
+  Cloud Computing, pp. 839--846. IEEE Computer Society (2013)
+
+\bibitem{zhu2012performance}
+Zhu, Q., Tung, T.: {A Performance Interference Model for Managing Consolidated
+  Workloads in QoS-Aware Clouds}.
+\newblock In: Cloud Computing (CLOUD), 2012 IEEE 5th International Conference
+  on. IEEE (2012)
+
+\end{thebibliography}
