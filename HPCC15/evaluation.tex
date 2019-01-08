@@ -101,8 +101,7 @@ As the volume of data read and written was small (only few megabytes), the predi
 \caption{I/O Read Prediction for K-Means}
 \label{km_io_r}
 \end{figure}
-%Suppose $r_1$ is the change ratio of the average running time in second batch of tasks over the average time of the first batch and $r_2$ is another change ratio of the average running time in following batches of tasks over the average time of the first batch, which can be calculated in equation \ref{ratio}. $r_1$ is smaller than $r_2$ in this example. But we can only calculate $r_1$ because the size of sample data,which will bring the deviation in prediction. Actually, all the values of the predicted running time are smaller than the actual value in the experiment. In addition, the prediction accuracy could reach 99\% when using 100\% of the input data, which proves this explanation to some extent. 
-%Comparing Fig.\ref{pr_io_r} and Fig.\ref{pr_io_w}, this accuracy gap is easily observed. The reason may be that shuffle read always incurs the network I/O cost for data fetching and shuffle write only generates local disk I/O for writing interim data to buckets. And smaller cluster can not capture the data transmission in the network of more worker nodes in large cluster.
+
 
 
 
@@ -135,10 +134,5 @@ For I/O write cost prediction, the accuracy is above 90\% for large-scale simula
 \caption{I/O Read Prediction for PageRank}
 \label{pr_io_r}
 \end{figure}
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=3.0in]{figures/pr_mem.png}
-%\caption{Memory Cost Prediction for PageRank}
-%\label{pr_mem}
-%\end{figure}
+
 

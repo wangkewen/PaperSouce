@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.22)  26 AUG 2018 21:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.22)  8 JAN 2019 11:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -322,18 +322,18 @@ Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 ) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -398,7 +398,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 3701) in paragraph at lines 128--131
+Underfull \hbox (badness 3701) in paragraph at lines 57--60
 []\OT1/ptm/b/it/9 Abstract\OT1/ptm/b/n/9 ---To max-i-mize re-source uti-liza-ti
 on and sys-tem
  []
@@ -425,26 +425,26 @@ Underfull \hbox (badness 3250) in paragraph at lines 3--11
 File: figures/flow1.pdf Graphic file (type pdf)
 
 <use figures/flow1.pdf>
-Package pdftex.def Info: figures/flow1.pdf used on input line 22.
+Package pdftex.def Info: figures/flow1.pdf used on input line 19.
 (pdftex.def)             Requested size: 238.49121pt x 238.49284pt.
  [2 <./figures/flow1.pdf>] [3]
-Overfull \hbox (40.47548pt too wide) in alignment at lines 160--167
+Overfull \hbox (40.47548pt too wide) in alignment at lines 150--157
  [][][] []
  []
 
 
-Overfull \hbox (18.74794pt too wide) detected at line 187
+Overfull \hbox (18.74794pt too wide) detected at line 177
 [] []
  []
 
 [4]
-Overfull \hbox (1.32321pt too wide) in paragraph at lines 229--229
+Overfull \hbox (1.32321pt too wide) in paragraph at lines 219--219
 []|[]$\OML/cmm/m/it/10 phase$\OT1/ptm/m/n/10 .setStageTime($\OML/cmm/m/it/10 ph
 ase$\OT1/ptm/m/n/10 .getStageTime() 
  []
 
 
-Overfull \hbox (2.14297pt too wide) in paragraph at lines 229--229
+Overfull \hbox (2.14297pt too wide) in paragraph at lines 219--219
 []|[]$\OML/cmm/m/it/10 phase$\OT1/ptm/m/n/10 .setPartialTime($\OML/cmm/m/it/10 
 phase$\OT1/ptm/m/n/10 .getPartialTime 
  []
@@ -592,7 +592,7 @@ c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (9 pages, 664565 bytes).
+Output written on paper.pdf (9 pages, 664545 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream
